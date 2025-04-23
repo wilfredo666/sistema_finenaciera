@@ -100,7 +100,7 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="VMaterial" class="nav-link">
+                  <a href="VSocio" class="nav-link">
                     <i class="far fa-circle nav-icon text-info"></i>
                     <p>Lista de socios</p>
                   </a>
@@ -118,7 +118,7 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="VProyecto" class="nav-link">
+                  <a href="VCuenta" class="nav-link">
                     <i class="far fa-circle nav-icon text-info"></i>
                     <p>Lista de Cuentas</p>
                   </a>
@@ -144,7 +144,7 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="VProyecto" class="nav-link">
+                  <a href="VCredito" class="nav-link">
                     <i class="far fa-circle nav-icon text-info"></i>
                     <p>Lista de Creditos</p>
                   </a>
@@ -153,7 +153,7 @@
 
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="VProyecto" class="nav-link">
+                  <a href="VPago" class="nav-link">
                     <i class="far fa-circle nav-icon text-info"></i>
                     <p>Pagos</p>
                   </a>

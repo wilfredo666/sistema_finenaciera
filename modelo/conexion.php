@@ -9,7 +9,7 @@ class Conexion
          PARA TRABAJAR DE MANERA LOCAL 
          =================================*/
     $host = "localhost";
-    $db = "inventario_material";
+    $db = "sistema_financiera";
     $userDB = "root";
     $passDB = "";
 
