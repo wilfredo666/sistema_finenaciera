@@ -28,7 +28,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="inicio" class="brand-link">
-        <img src="assest/dist/img/AdminLTELogo.png" class="brand-image img-circle elevation-3" style="opacity: .8" style="width:300px">
+        <img src="assest/dist/img/logo.png" class="brand-image img-circle elevation-3" style="opacity: .8" style="width:300px">
         <span class="brand-text font-weight-light">Sitema Financiero</span>
       </a>
 
@@ -92,7 +92,7 @@
 
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-grip-horizontal"></i>
+                <i class="nav-icon fas fa-handshake"></i>
                 <p>
                   Socios
                   <i class="right fas fa-angle-left"></i>
@@ -110,7 +110,7 @@
 
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-briefcase"></i>
+                <i class="nav-icon fas fa-file-invoice-dollar"></i>
                 <p>
                   Cuentas
                   <i class="right fas fa-angle-left"></i>
@@ -126,7 +126,7 @@
               </ul>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="VProyecto" class="nav-link">
+                  <a href="VTransaccion" class="nav-link">
                     <i class="far fa-circle nav-icon text-info"></i>
                     <p>Transacciones</p>
                   </a>
@@ -136,7 +136,7 @@
 
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-briefcase"></i>
+                <i class="nav-icon fas fa-credit-card"></i>
                 <p>
                   Creditos
                   <i class="right fas fa-angle-left"></i>

@@ -1,34 +1,35 @@
-function MNuevoSocio() {
-  $("#modal-lg").modal("show")
+function MNuevaCuenta() {
+  $("#modal-default").modal("show")
 
   var obj = ""
   $.ajax({
     type: "POST",
-    url: "vista/socio/FNuevoSocio.php",
+    url: "vista/cuenta/FNuevaCuenta.php",
     data: obj,
     success: function (data) {
-      $("#content-lg").html(data)
+      $("#content-default").html(data)
     }
   })
 }
 
-function RegSocio() {
+function RegCuenta() {
 
-  var formData = new FormData($("#FormRegSocio")[0])
+  var formData = new FormData($("#FormRegCuenta")[0])
 
   $.ajax({
     type: "POST",
-    url: "controlador/socioControlador.php?ctrRegSocio",
+    url: "controlador/cuentaControlador.php?ctrRegCuenta",
     data: formData,
     cache: false,
     contentType: false,
     processData: false,
     success: function (data) {
+
       if (data == "ok") {
         Swal.fire({
           icon: 'success',
           showConfirmButton: false,
-          title: 'El socio ha sido registrado',
+          title: 'El Cuenta ha sido registrada',
           timer: 1000
         })
         setTimeout(function () {
@@ -47,36 +48,36 @@ function RegSocio() {
   })
 }
 
-function MEditSocio(id) {
-  $("#modal-lg").modal("show")
+function MEditCuenta(id) {
+  $("#modal-default").modal("show")
 
   var obj = ""
   $.ajax({
     type: "POST",
-    url: "vista/socio/FEditSocio.php?id=" + id,
+    url: "vista/cuenta/FEditCuenta.php?id=" + id,
     data: obj,
     success: function (data) {
-      $("#content-lg").html(data)
+      $("#content-default").html(data)
     }
   })
 }
 
-function EditSocio() {
-  var formData = new FormData($("#FormEditSocio")[0])
+function EditCuenta() {
+  var formData = new FormData($("#FormEditCuenta")[0])
   $.ajax({
     type: "POST",
-    url: "controlador/socioControlador.php?ctrEditSocio",
+    url: "controlador/cuentaControlador.php?ctrEditCuenta",
     data: formData,
     cache: false,
     contentType: false,
     processData: false,
     success: function (data) {
-      /* console.log(data) */
+
       if (data == "ok") {
         Swal.fire({
           icon: 'success',
           showConfirmButton: false,
-          title: 'El socio ha sido actualizado',
+          title: 'La Cuenta ha sido actualizada',
           timer: 1000
         })
         setTimeout(function () {
@@ -95,12 +96,12 @@ function EditSocio() {
   })
 }
 
-function MEliSocio(id) {
+function MEliCuenta(id) {
   var obj = {
     id: id
   }
   Swal.fire({
-    title: '¿Esta seguro de eliminar este socio?',
+    title: '¿Esta seguro de eliminar esta Cuenta?',
     showDenyButton: true,
     showCancelButton: false,
     confirmButtonText: 'Confirmar',
@@ -110,13 +111,13 @@ function MEliSocio(id) {
       $.ajax({
         type: "POST",
         data: obj,
-        url: "controlador/socioControlador.php?ctrEliSocio",
+        url: "controlador/cuentaControlador.php?ctrEliCuenta",
         success: function (data) {
           if (data == "ok") {
             Swal.fire({
               icon: 'success',
               showConfirmButton: false,
-              title: 'socio eliminado',
+              title: 'Cuenta eliminado',
               timer: 1000
             })
             setTimeout(function () {
@@ -126,7 +127,7 @@ function MEliSocio(id) {
             Swal.fire({
               icon: 'error',
               title: 'Error!!!',
-              text: 'El socio no puede ser eliminado debido a estar activo',
+              text: 'La Cuenta no puede ser eliminado debido a estar activo',
               showConfirmButton: false,
               timer: 1500
             })

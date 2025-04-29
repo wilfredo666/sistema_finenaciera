@@ -22,8 +22,7 @@ class ModeloSocio {
     $telefono_socio = $data["telefono_socio"];
     $email = $data["email"];
 
-    $stmt = Conexion::conectar()->prepare("INSERT INTO socio (ci_socio, ap_pat_socio, ap_mat_socio, nombre_socio, direccion, telefono_socio, email) 
-                                               VALUES ('$ci_socio', '$ap_pat_socio', '$ap_mat_socio', '$nombre_socio', '$direccion', '$telefono_socio', '$email')");
+    $stmt = Conexion::conectar()->prepare("INSERT INTO socio (ci_socio, ap_pat_socio, ap_mat_socio, nombre_socio, direccion, telefono_socio, email) VALUES ('$ci_socio', '$ap_pat_socio', '$ap_mat_socio', '$nombre_socio', '$direccion', '$telefono_socio', '$email')");
 
     if ($stmt->execute()) {
       return "ok";

@@ -23,13 +23,13 @@ class ControladorSocio {
   static public function ctrRegSocio() {
     require "../modelo/socioModelo.php";
     $data = array(
-      "nombre_socio"  => $_POST["nombre_socio"],
-      "ap_pat_socio"  => $_POST["ap_pat_socio"],
-      "ap_mat_socio"  => $_POST["ap_mat_socio"],
-      "ci_socio"      => $_POST["ci_socio"],
-      "direccion"     => $_POST["direccion"],
-      "telefono_socio"=> $_POST["telefono_socio"],
-      "email"         => $_POST["email"]
+      "nombre_socio"  => $_POST["nomSocio"],
+      "ap_pat_socio"  => $_POST["patSocio"],
+      "ap_mat_socio"  => $_POST["matSocio"],
+      "ci_socio"      => $_POST["ciSocio"],
+      "direccion"     => $_POST["dirSocio"],
+      "telefono_socio"=> $_POST["telSocio"],
+      "email"         => $_POST["emailSocio"]
     );
     $respuesta = ModeloSocio::mdlRegSocio($data);
     echo $respuesta;
@@ -45,15 +45,15 @@ class ControladorSocio {
   static public function ctrEditSocio() {
     require "../modelo/socioModelo.php";
     $data = array(
-      "id_socio"      => $_POST["id_socio"],
-      "nombre_socio"  => $_POST["nombre_socio"],
-      "ap_pat_socio"  => $_POST["ap_pat_socio"],
-      "ap_mat_socio"  => $_POST["ap_mat_socio"],
-      "ci_socio"      => $_POST["ci_socio"],
-      "direccion"     => $_POST["direccion"],
-      "telefono_socio"=> $_POST["telefono_socio"],
-      "email"         => $_POST["email"],
-      "estado_socio"  => $_POST["estado_socio"]
+      "id_socio"      => $_POST["idSocio"],
+      "nombre_socio"  => $_POST["nomSocio"],
+      "ap_pat_socio"  => $_POST["patSocio"],
+      "ap_mat_socio"  => $_POST["matSocio"],
+      "ci_socio"      => $_POST["ciSocio"],
+      "direccion"     => $_POST["dirSocio"],
+      "telefono_socio"=> $_POST["telSocio"],
+      "email"         => $_POST["emailSocio"],
+      "estado_socio"  => $_POST["estadoSocio"]
     );
     $respuesta = ModeloSocio::mdlEditSocio($data);
     echo $respuesta;

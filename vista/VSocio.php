@@ -14,8 +14,8 @@
   <thead>
     <tr>
       <th>Nombre(s)</th>
-      <th>Apellido Paterno</th>
-      <th>Apellido Materno</th>
+      <th>Ap. Paterno</th>
+      <th>Ap. Materno</th>
       <th>C.I.</th>
       <th>Dirección</th>
       <th>Teléfono</th>
@@ -49,9 +49,6 @@
       <?php } ?>
       <td>
         <div class="btn-group">
-          <button class="btn btn-sm btn-info" onclick="MVerSocio(<?php echo $value['id_socio']; ?>)">
-            <i class="fas fa-eye"></i>
-          </button>
           <button class="btn btn-sm btn-secondary" onclick="MEditSocio(<?php echo $value['id_socio']; ?>)">
             <i class="fas fa-edit"></i>
           </button>

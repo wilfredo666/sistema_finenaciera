@@ -51,8 +51,8 @@
 
 <script src="assest/js/usuario.js"></script>
 <script src="assest/js/personal.js"></script>
-<script src="assest/js/material.js"></script>
-<script src="assest/js/proyecto.js"></script>
+<script src="assest/js/socio.js"></script>
+<script src="assest/js/cuenta.js"></script>
 
 
 <!--====================
@@ -105,6 +105,7 @@ seccion de modals
     $("#DataTable").DataTable({
       "responsive": true,
       "lengthChange": false,
+      "ordering":false,
       "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print"],
       language: {
@@ -132,77 +133,6 @@ seccion de modals
     //$('#DataTable td').css('text-align', 'center'); 
   });
 
-  $(function() {
-    $("#DataTableMaterial").DataTable({
-      "ordering": true,
-      "responsive": true,
-      "lengthChange": false,
-      "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "colvis",
-                  {
-                    text: 'Imprimir', // Texto del botón personalizado
-                    action: function () { 
-                      var newTab=window.open('vista/material/RepMaterial.php','_blank');
-                      newTab.addEventListener('load', function() {
-                        newTab.print();
-                      });
-                    }
-                  }
-                 ],
-
-      language: {
-        "decimal": "",
-        "emptyTable": "No hay información",
-        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-        "infoPostFix": "",
-        "thousands": ",",
-        "lengthMenu": "Mostrar _MENU_ Entradas",
-        "loadingRecords": "Cargando...",
-        "processing": "Procesando...",
-        "search": "Buscar:",
-        "zeroRecords": "Sin resultados encontrados",
-        "paginate": {
-          "first": "Primero",
-          "last": "Ultimo",
-          "next": "Siguiente",
-          "previous": "Anterior"
-        }
-      }
-    }).buttons().container().appendTo('#DataTableMaterial_wrapper .col-md-6:eq(0)');
-
-  });
-
-
-  $(function() {
-    $("#DataTable_NVenta").DataTable({
-      "responsive": true,
-      "lengthChange": false,
-      "autoWidth": false,
-      language: {
-        "decimal": "",
-        "emptyTable": "No hay información",
-        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-        "infoPostFix": "",
-        "thousands": ",",
-        "lengthMenu": "Mostrar _MENU_ Entradas",
-        "loadingRecords": "Cargando...",
-        "processing": "Procesando...",
-        "search": "Buscar:",
-        "zeroRecords": "Sin resultados encontrados",
-        "paginate": {
-          "first": "Primero",
-          "last": "Ultimo",
-          "next": "Siguiente",
-          "previous": "Anterior"
-        }
-      }
-    })
-
-  });
 
   /*select2 para formulario NE*/
   $('.select2bs4').select2({

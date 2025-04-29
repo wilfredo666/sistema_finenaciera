@@ -8,7 +8,7 @@
 
   <section class="content">
     <h5 class="table-title">
-      Lista del Socios
+      Lista de Cuentas
     </h5>
     <table id="DataTable" class="table table-bordered table-striped">
       <thead>
@@ -16,6 +16,7 @@
           <th>Número de Cuenta</th>
           <th>Socio</th>
           <th>Saldo</th>
+          <th>Fecha Creacion</th>
           <th>Estado</th>
           <td>
             <button class="btn btn-block btn-primary btn-sm" onclick="MNuevaCuenta()">
@@ -33,6 +34,7 @@
           <td><?php echo $value["num_cuenta"]; ?></td>
           <td><?php echo $value["nombre_socio"]." ".$value["ap_pat_socio"]." ".$value["ap_mat_socio"]; ?></td>
           <td><?php echo number_format($value["saldo"], 2); ?> Bs</td>
+          <td><?php echo $value["create_at"]; ?></td>
           <?php  
           if($value["estado_cuenta"] == 1){ ?>
           <td><span class="badge badge-success">Activa</span></td>
@@ -41,15 +43,15 @@
           <?php } ?>
           <td>
             <div class="btn-group">
-              <button class="btn btn-sm btn-info" onclick="MVerCuenta(<?php echo $value['id_cuenta']; ?>)">
-                <i class="fas fa-eye"></i>
-              </button>
               <button class="btn btn-sm btn-secondary" onclick="MEditCuenta(<?php echo $value['id_cuenta']; ?>)">
                 <i class="fas fa-edit"></i>
               </button>
               <button class="btn btn-sm btn-danger" onclick="MEliCuenta(<?php echo $value['id_cuenta']; ?>)">
                 <i class="fas fa-trash"></i>
               </button>
+              <a class="btn btn-sm btn-warning" href="VTransaccionCuenta?<?php echo $value['id_cuenta'];?>">
+                <i class="fas fa-cash-register"></i>
+              </a>
             </div>
           </td>
         </tr>

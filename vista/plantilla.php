@@ -43,7 +43,7 @@ session_start();
     <!-- dropzonejs -->
     <link rel="stylesheet" href="assest/plugins/dropzone/min/dropzone.min.css">
     <!--icono-->
-    <link rel="icon" href="assest/dist/img/material/product_default.png">
+    <link rel="icon" href="assest/dist/img/logo.png">
 
     <script type="text/javascript" src="assest/dist/js/otros/jquery.min.js"></script>
     <script type="text/javascript" src="assest/dist/js/otros/moment.min.js"></script>
@@ -75,6 +75,21 @@ session_start();
         padding-left:5px;
         color:#484848;
       }
+
+      .table-info{
+        background-color: white;
+      }
+      .table-info th{
+        border-left: 5px solid #344cff;
+        padding-left:5px;
+        border-top: none;
+      }
+      .table-info td{
+        border: none;
+      }
+      .table-info tr{
+        margin: 1px;
+      }
     </style>
   </head>
 
@@ -93,6 +108,8 @@ session_start();
         || $_GET["ruta"] == "VCuenta"
         || $_GET["ruta"] == "VCredito"
         || $_GET["ruta"] == "VPago"
+        || $_GET["ruta"] == "VTransaccionCuenta"
+        || $_GET["ruta"] == "VTransaccion"
       ) {
         $ruta = $_GET["ruta"] . ".php";
       }
