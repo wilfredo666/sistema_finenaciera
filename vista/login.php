@@ -1,12 +1,15 @@
 <body class="hold-transition login-page">
+   <div id="back"></div>
     <div class="login-box">
-        <div class="login-logo">
+<!--        <div class="login-logo">
             <a href="#">SISTEMA FINANCIERO</a>
-        </div>
+        </div>-->
         <!-- /.login-logo -->
-        <div class="card">
+        <div class="card" style="box-shadow:5px -3px 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2)">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Ingrese sus credenciales</p>
+                <div class="login-logo">
+          <img src="assest/dist/img/logo_login.jpg" style="width:200px;">
+        </div>
 
                 <form action="#" method="post">
                     <div class="input-group mb-3">

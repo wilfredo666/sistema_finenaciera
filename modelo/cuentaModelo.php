@@ -87,4 +87,35 @@ ON so.id_socio=cta.id_socio");
     return $stmt->fetchAll();
     $stmt->closeCursor();
   }
+  
+  static public function mdlRegTransCuenta($data){
+    $id_cuenta = $data["id_cuenta"];
+    $tipo = $data["tipo"];
+    $concepto = $data["concepto"];
+    $monto = $data["monto"];
+
+    $stmt = Conexion::conectar()->prepare("INSERT INTO transaccion(id_cuenta, tipo, concepto, monto) VALUES ($id_cuenta,'$tipo','$concepto','$monto')");
+
+    if ($stmt->execute()) {
+      return "ok";
+    } else {
+      return "error";
+    }
+
+    $stmt=null;
+  }
+  
+  static public function mdlEliTransCuenta($id){
+    try {
+      $stmt = Conexion::conectar()->prepare("DELETE FROM transaccion WHERE id_transaccion = $id");
+      $stmt->execute();
+    } catch (PDOException $e) {
+      $codeError = $e->getCode();
+      if ($codeError == "23000") {
+        return "error";
+        $stmt->null;
+      }
+    }
+    return "ok";
+  }
 }

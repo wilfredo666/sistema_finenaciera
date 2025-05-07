@@ -4,6 +4,8 @@ if (isset($ruta["query"])) {
   if ($ruta["query"] == "ctrRegCuenta" ||
       $ruta["query"] == "ctrEditCuenta" ||
       $ruta["query"] == "ctrEliCuenta" ||
+      $ruta["query"] == "ctrRegTransCuenta" ||
+      $ruta["query"] == "ctrEliTransCuenta" ||
       $ruta["query"] == "ctrBusCuenta") {
     $metodo = $ruta["query"];
     $Cuenta = new ControladorCuenta();
@@ -60,5 +62,27 @@ class ControladorCuenta {
   static public function ctrInfoTransacciones(){
     $respuesta = ModeloCuenta::mdlInfoTransacciones();
     return $respuesta;
+  }
+  
+  static public function ctrRegTransCuenta(){
+    require "../modelo/cuentaModelo.php";
+    
+    $data = array(
+      "id_cuenta"   => $_POST["idCuenta"],
+      "tipo"  => $_POST["tipoTrans"],
+      "concepto" => $_POST["concepto"],
+      "monto" => $_POST["monto"]
+    );
+    
+    $respuesta = ModeloCuenta::mdlRegTransCuenta($data);
+    echo $respuesta;
+  }
+  
+  static public function ctrEliTransCuenta(){
+    require "../modelo/cuentaModelo.php";
+    
+    $id=$_POST["id"];
+    $respuesta = ModeloCuenta::mdlEliTransCuenta($id);
+    echo $respuesta;
   }
 }

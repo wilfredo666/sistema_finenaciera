@@ -1,5 +1,8 @@
 <?php 
 $usuario=ControladorUsuario::ctrCantidadUsuarios();
+$socio=ControladorSocio::ctrCantidadSocios();
+$personal=ControladorPersonal::ctrCantidadPersonal();
+$credito=ControladorCredito::ctrCantidadCredito();
 
 ?>
 <!-- Content Wrapper. Contains page content -->
@@ -29,14 +32,14 @@ $usuario=ControladorUsuario::ctrCantidadUsuarios();
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>#</h3>
+              <h3><?php echo $socio["socios"];?></h3>
 
               <p>Socios</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="VMaterial" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="VSocio" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -51,7 +54,7 @@ $usuario=ControladorUsuario::ctrCantidadUsuarios();
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="VVenta" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="VUsuario" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -59,14 +62,14 @@ $usuario=ControladorUsuario::ctrCantidadUsuarios();
           <!-- small box -->
           <div class="small-box bg-warning">
             <div class="inner">
-              <h3>#</h3>
+              <h3><?php echo $credito["creditos"];?></h3>
 
               <p>Creditos</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="VUsuario" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="VCredito" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -74,7 +77,7 @@ $usuario=ControladorUsuario::ctrCantidadUsuarios();
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3>1</h3>
+              <h3><?php echo $personal["personal"];?></h3>
 
               <p>Personal</p>
               <!--iconos sacados de https://themeon.net/nifty/v2.9.1/icons-ionicons.html?-->
@@ -82,7 +85,7 @@ $usuario=ControladorUsuario::ctrCantidadUsuarios();
             <div class="icon">
               <i class="ion ion-person-stalker"></i>
             </div>
-            <a href="VCliente" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="VPersonal" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

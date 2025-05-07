@@ -77,4 +77,9 @@ class ControladorPersonal
     $respuesta = ModeloPersonal::mdlEliPersonal($id);
     echo $respuesta;
   }
+
+  static public function ctrCantidadPersonal(){
+    $respuesta = ModeloPersonal::mdlCantidadPersonal();
+    return $respuesta;
+  }
 }

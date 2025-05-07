@@ -91,4 +91,15 @@ class ModeloSocio {
     $stmt->close();
     $stmt->null;
   }
+  
+  static public function mdlCantidadSocios(){
+    $stmt = Conexion::conectar()->prepare("select count(*) as socios from socio");
+
+    $stmt->execute();
+    return $stmt->fetch();
+
+    $stmt->close();
+    $stmt->null;
+  }
+  
 }

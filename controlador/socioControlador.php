@@ -66,4 +66,10 @@ class ControladorSocio {
     $respuesta = ModeloSocio::mdlEliSocio($id);
     echo $respuesta;
   }
+  
+    static public function ctrCantidadSocios(){
+    $respuesta = ModeloSocio::mdlCantidadSocios();
+    return $respuesta;
+  }
+
 }

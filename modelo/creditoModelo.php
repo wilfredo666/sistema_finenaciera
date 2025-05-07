@@ -4,11 +4,11 @@ require_once "conexion.php";
 class ModeloCredito {
 
   static public function mdlInformacionCredito() {
-    $stmt = Conexion::conectar()->prepare("SELECT * FROM credito");
+    $stmt = Conexion::conectar()->prepare("SELECT id_credito, nombre_socio, ap_pat_socio, ap_mat_socio, monto, credito.create_at, fecha_aprobacion, fecha_vencimiento, estado_credito FROM credito JOIN socio ON socio.id_socio=credito.id_socio");
     $stmt->execute();
-    return $stmt->fetchAll();
-    $stmt->close();
-    $stmt->null;
+    $resultado= $stmt->fetchAll();
+    $stmt->closeCursor();
+    return $resultado;
   }
 
   static public function mdlRegCredito($data) {
@@ -16,7 +16,7 @@ class ModeloCredito {
     $monto = $data["monto"];
     $fecha_vencimiento = $data["fecha_vencimiento"];
 
-    $stmt = Conexion::conectar()->prepare("INSERT INTO credito (id_socio, monto, fecha_vencimiento) VALUES ('$id_socio', '$monto', '$fecha_vencimiento')");
+    $stmt = Conexion::conectar()->prepare("INSERT INTO credito (id_socio, monto, fecha_vencimiento) VALUES ($id_socio, '$monto', '$fecha_vencimiento')");
 
     if ($stmt->execute()) {
       return "ok";
@@ -28,23 +28,21 @@ class ModeloCredito {
   }
 
   static public function mdlInfoCredito($id) {
-    $stmt = Conexion::conectar()->prepare("SELECT * FROM credito WHERE id_credito = $id");
+    $stmt = Conexion::conectar()->prepare("SELECT id_credito, nombre_socio, ap_pat_socio, ap_mat_socio, monto, credito.create_at, fecha_aprobacion, fecha_vencimiento, estado_credito FROM credito JOIN socio ON socio.id_socio=credito.id_socio WHERE id_credito = $id");
     $stmt->execute();
-    return $stmt->fetch();
-    $stmt->close();
-    $stmt->null;
+    $resultado= $stmt->fetch();
+    $stmt->closeCursor();
+    return $resultado;
   }
 
   static public function mdlEditCredito($data) {
     $id_credito = $data["id_credito"];
-    $id_socio = $data["id_socio"];
     $monto = $data["monto"];
     $fecha_aprobacion = $data["fecha_aprobacion"];
     $fecha_vencimiento = $data["fecha_vencimiento"];
     $estado_credito = $data["estado_credito"];
 
     $stmt = Conexion::conectar()->prepare("UPDATE credito SET 
-            id_socio = '$id_socio', 
             monto = '$monto', 
             fecha_aprobacion = '$fecha_aprobacion', 
             fecha_vencimiento = '$fecha_vencimiento', 
@@ -56,8 +54,8 @@ class ModeloCredito {
     } else {
       return "error";
     }
-    $stmt->close();
-    $stmt->null;
+
+    $stmt = null;
   }
 
   static public function mdlEliCredito($id) {
@@ -146,6 +144,16 @@ class ModeloCredito {
       }
     }
     return "ok";
+    $stmt->close();
+    $stmt->null;
+  }
+  
+  static public function mdlCantidadCredito(){
+    $stmt = Conexion::conectar()->prepare("select count(*) as creditos from credito");
+
+    $stmt->execute();
+    return $stmt->fetch();
+
     $stmt->close();
     $stmt->null;
   }

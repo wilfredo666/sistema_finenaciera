@@ -81,4 +81,15 @@ class ModeloPersonal{
     $stmt->close();
     $stmt->null;
   }
+  
+  static public function mdlCantidadPersonal(){
+    $stmt = Conexion::conectar()->prepare("select count(*) as personal from personal");
+
+    $stmt->execute();
+    return $stmt->fetch();
+
+    $stmt->close();
+    $stmt->null;
+  }
+  
 }

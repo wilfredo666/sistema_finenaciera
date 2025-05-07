@@ -81,7 +81,7 @@ $cuenta = ControladorCuenta::ctrInfoCuenta($idCuenta);
           <th>Fecha</th>
           <th>Estado</th>
           <td>
-            <button class="btn btn-block btn-primary btn-sm" onclick="MNuevaCuenta()">
+            <button class="btn btn-block btn-primary btn-sm" onclick="MNTransCuenta(<?php echo $idCuenta;?>)">
               <i class="fas fa-plus"></i> Nueva Transaccion
             </button>
           </td>

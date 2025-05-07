@@ -25,9 +25,9 @@ class ControladorCredito {
   static public function ctrRegCredito() {
     require "../modelo/creditoModelo.php";
     $data = array(
-      "id_socio"         => $_POST["id_socio"],
+      "id_socio"         => $_POST["socio"],
       "monto"            => $_POST["monto"],
-      "fecha_vencimiento"=> $_POST["fecha_vencimiento"]
+      "fecha_vencimiento"=> $_POST["fechaVencimiento"]
     );
     $respuesta = ModeloCredito::mdlRegCredito($data);
     echo $respuesta;
@@ -41,12 +41,11 @@ class ControladorCredito {
   static public function ctrEditCredito() {
     require "../modelo/creditoModelo.php";
     $data = array(
-      "id_credito"       => $_POST["id_credito"],
-      "id_socio"         => $_POST["id_socio"],
+      "id_credito"       => $_POST["idCredito"],
       "monto"            => $_POST["monto"],
-      "fecha_aprobacion" => $_POST["fecha_aprobacion"],
-      "fecha_vencimiento"=> $_POST["fecha_vencimiento"],
-      "estado_credito"   => $_POST["estado_credito"]
+      "fecha_aprobacion" => $_POST["fechaAprobacion"],
+      "fecha_vencimiento"=> $_POST["fechaVencimiento"],
+      "estado_credito"   => $_POST["estado"]
     );
     $respuesta = ModeloCredito::mdlEditCredito($data);
     echo $respuesta;
@@ -100,4 +99,10 @@ class ControladorCredito {
         $respuesta = ModeloCredito::mdlEliPago($id);
         echo $respuesta;
     }
+  
+    static public function ctrCantidadCredito(){
+    $respuesta = ModeloCredito::mdlCantidadCredito();
+    return $respuesta;
+  }
+
 }

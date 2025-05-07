@@ -2,7 +2,7 @@
   <div class="float-right d-none d-sm-block">
     <b>Version</b> 1.0.0
   </div>
-  <strong>Copyright &copy; 2025 <a href="https://ekesoft.es">Ekesoft</a>.</strong> Derechos reservados.
+
 </footer>
 
 <!-- Control Sidebar -->
@@ -53,6 +53,7 @@
 <script src="assest/js/personal.js"></script>
 <script src="assest/js/socio.js"></script>
 <script src="assest/js/cuenta.js"></script>
+<script src="assest/js/credito.js"></script>
 
 
 <!--====================

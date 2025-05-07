@@ -17,6 +17,7 @@
       <th>Monto</th>
       <th>Fecha Solicitud</th>
       <th>Fecha Vencimiento</th>
+      <th>Fecha Aprobacion</th>
       <th>Estado</th>
       <td>
         <button class="btn btn-block btn-primary btn-sm" onclick="MNuevoCredito()">
@@ -31,18 +32,16 @@
     foreach ($creditos as $value) {
     ?>
     <tr>
-      <td><?php echo $value["id_socio"]; ?></td>
+      <td><?php echo $value["nombre_socio"]." ".$value["ap_pat_socio"]." ".$value["ap_mat_socio"]; ?></td>
       <td><?php echo number_format($value["monto"], 2); ?> Bs</td>
-      <td><?php echo $value["fecha_solicitud"]; ?></td>
+      <td><?php echo $value["create_at"]; ?></td>
       <td><?php echo $value["fecha_vencimiento"]; ?></td>
+      <td><?php echo $value["fecha_aprobacion"]; ?></td>
       <td><span class="badge badge-<?php echo $value["estado_credito"] == 'aprobado' ? 'success' : ($value["estado_credito"] == 'pendiente' ? 'warning' : 'danger'); ?>">
           <?php echo ucfirst($value["estado_credito"]); ?>
       </span></td>
       <td>
         <div class="btn-group">
-          <button class="btn btn-sm btn-info" onclick="MVerCredito(<?php echo $value['id_credito']; ?>)">
-            <i class="fas fa-eye"></i>
-          </button>
           <button class="btn btn-sm btn-secondary" onclick="MEditCredito(<?php echo $value['id_credito']; ?>)">
             <i class="fas fa-edit"></i>
           </button>

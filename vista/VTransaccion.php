@@ -18,8 +18,7 @@
           <th>Cuenta</th>
           <th>Monto (Bs.)</th>
           <th>Fecha Hora</th>
-          <td>
-          </td>
+          <td>Estado</td>
         </tr>
       </thead>
       <tbody>
@@ -39,9 +38,6 @@
           <?php } else { ?>
           <td><span class="badge badge-danger">Declinada</span></td>
           <?php } ?>
-          <td>
-           
-          </td>
         </tr>
         <?php
         }
